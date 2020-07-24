@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace SInterview.DataAccess
+namespace SInterview.DataAccessLayer
 {
     /// <summary>
     /// Dates on which employees can attend interviews

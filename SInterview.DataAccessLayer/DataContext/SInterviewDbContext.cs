@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace SInterview.DataAccess
+namespace SInterview.DataAccessLayer
 {
     /// <summary>
     /// The context for an interview system
     /// </summary>
-    public class InterviewDbContext : DbContext
+    public class SInterviewDbContext : DbContext
     {
 
         #region Tables
@@ -47,7 +47,7 @@ namespace SInterview.DataAccess
             #endregion
 
             // Seeding data
-            InterviewDbContextSeeder.Seed(modelBuilder);
+            SInterviewDbContextSeeder.Seed(modelBuilder);
         }
     }
 }

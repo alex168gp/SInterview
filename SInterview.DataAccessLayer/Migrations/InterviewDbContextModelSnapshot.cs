@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using SInterview.DataAccess;
+using SInterview.DataAccessLayer;
 
 namespace SInterview.DataAccessLayer.Migrations
 {
-    [DbContext(typeof(InterviewDbContext))]
+    [DbContext(typeof(SInterviewDbContext))]
     partial class InterviewDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

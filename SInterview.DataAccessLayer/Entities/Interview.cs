@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SInterview.DataAccess
+namespace SInterview.DataAccessLayer
 {
     /// <summary>
     /// Details about interview 

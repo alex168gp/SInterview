@@ -1,4 +1,4 @@
-﻿namespace SInterview.DataAccess
+﻿namespace SInterview.DataAccessLayer
 {
     /// <summary>
     /// Employee feedback on how candidate passed the interview

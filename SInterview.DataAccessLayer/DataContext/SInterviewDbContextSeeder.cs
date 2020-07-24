@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace SInterview.DataAccess
+namespace SInterview.DataAccessLayer
 {
     /// <summary>
-    /// Populate the database with <see cref="InterviewDbContext"/>
+    /// Populate the database with <see cref="SInterviewDbContext"/>
     /// </summary>
-    public class InterviewDbContextSeeder
+    public class SInterviewDbContextSeeder
     {
         /// <summary>
         /// Populate the SInterview database
@@ -13,7 +13,7 @@ namespace SInterview.DataAccess
         /// <param name="modelBuilder"></param>
         public static void Seed(ModelBuilder modelBuilder)
         {
-            // TODO: need better seed data
+            // TODO: need more meaningful seed data
 
             #region Employees
 

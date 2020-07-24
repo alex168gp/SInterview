@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace SInterview.DataAccess
+namespace SInterview.DataAccessLayer
 {
     /// <summary>
     /// Brief information on an employee

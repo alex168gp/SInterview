@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using SInterview.DataAccess;
+using SInterview.DataAccessLayer;
 
 namespace SInterview.DataAccessLayer.Migrations
 {
-    [DbContext(typeof(InterviewDbContext))]
+    [DbContext(typeof(SInterviewDbContext))]
     [Migration("20200723195732_Initial")]
     partial class Initial
     {
