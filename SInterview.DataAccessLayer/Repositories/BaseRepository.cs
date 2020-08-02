@@ -8,7 +8,7 @@ namespace SInterview.DataAccessLayer
 {
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {
-        private DbSet<TEntity> mEntities { get; set; }
+        protected DbSet<TEntity> mEntities { get; set; }
 
         #region Constructor
 

@@ -16,14 +16,14 @@ namespace SInterview.DataAccessLayer
             // TODO: need more meaningful seed data
 
             #region Employees
-
+            
             modelBuilder.Entity<Employee>().HasData(
                 new Employee { EmployeeId = 1, Name = "Rick", Position = "Head" },
                 new Employee { EmployeeId = 2, Name = "Mike", Position = "Mid" },
                 new Employee { EmployeeId = 3, Name = "Sandy", Position = "Senior" },
                 new Employee { EmployeeId = 4, Name = "Tom", Position = "Mid" }
                 );
-
+            
             #endregion
 
             #region Candidates

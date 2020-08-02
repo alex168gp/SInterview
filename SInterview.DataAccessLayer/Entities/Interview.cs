@@ -58,6 +58,9 @@ namespace SInterview.DataAccessLayer
         /// </summary>
         public Candidate Candidate { get; set; }
 
+        /// <summary>
+        /// All employees that participated in this interview
+        /// </summary>
         public ICollection<EmployeeInterviews> EmployeeInterviews { get; set; }
     }
 }
