@@ -22,8 +22,21 @@ namespace SInterview.DataAccessLayer
         /// <returns>A list of interviews on specified date</returns>
         public IEnumerable<Interview> GetAllInterviewsOnDate(DateTime date)
         {
-            IEnumerable<Interview> interviewsOnDate = mEntities.Where(interview => interview.InterviewDate.Equals(date)).ToList();
+            IEnumerable<Interview> interviewsOnDate = mEntities.Where(interview => interview.InterviewDate.Value.Date == date.Date)
+                                                               .ToList();
             return interviewsOnDate;
+        }
+
+        /// <summary>
+        /// Get a list of all the interviews after specified date NOT including specified date
+        /// </summary>
+        /// <param name="date">Specified date after which a list of interviews will be made on condition their dates will be after specified date</param>
+        /// <returns>A list of interviews after specified date</returns>
+        public IEnumerable<Interview> GetAllIterviewsAfterDate(DateTime date)
+        {
+            IEnumerable<Interview> interviewsAfterDate = mEntities.Where(interview => interview.InterviewDate.Value.Date > date.Date)
+                                                                  .ToList();
+            return interviewsAfterDate;
         }
     }
 }
