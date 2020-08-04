@@ -48,6 +48,30 @@ namespace SInterview.DataAccessLayer
 
             // Seeding data
             SInterviewDbContextSeeder.Seed(modelBuilder);
+
+            #region Setup Auto Increment For Non-Seed Entries
+
+            // This means when an entry will be added to database for the first time,
+            // and if ID not specified, ID will start from 100
+            // All next entries will increment ID by 1
+
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.EmployeeId)
+                .HasIdentityOptions(startValue: 100);
+
+            modelBuilder.Entity<Candidate>()
+                .Property(c => c.CandidateId)
+                .HasIdentityOptions(startValue: 100);
+
+            modelBuilder.Entity<Interview>()
+                .Property(e => e.InterviewId)
+                .HasIdentityOptions(startValue: 100);
+
+            modelBuilder.Entity<EmployeeAvailableDates>()
+                .Property(c => c.DateId)
+                .HasIdentityOptions(startValue: 100); 
+
+            #endregion
         }
     }
 }
