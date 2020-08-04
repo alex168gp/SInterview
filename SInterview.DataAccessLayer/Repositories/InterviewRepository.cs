@@ -15,6 +15,7 @@ namespace SInterview.DataAccessLayer
 
         #endregion
 
+        // TODO: Keep them separate or merge?
         /// <summary>
         /// Get a list of all the interviews on specified date
         /// </summary>
