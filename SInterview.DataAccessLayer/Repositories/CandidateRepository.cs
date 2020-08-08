@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace SInterview.DataAccessLayer
@@ -23,9 +22,8 @@ namespace SInterview.DataAccessLayer
         /// <returns>All employees with specified position</returns>
         public IEnumerable<Candidate> GetAllCandidatesWithPosition (string position)
         {
-            IEnumerable<Candidate> candidatesByPosition = mEntities.Where(cand => cand.Position.Equals(position))
-                                                                   .ToList();
-            return candidatesByPosition;
+            return mEntities.Where(cand => cand.Position.Equals(position))
+                            .ToList();
         }
     }
 }

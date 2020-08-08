@@ -23,9 +23,8 @@ namespace SInterview.DataAccessLayer
         /// <returns>A list of interviews on specified date</returns>
         public IEnumerable<Interview> GetAllInterviewsOnDate(DateTime date)
         {
-            IEnumerable<Interview> interviewsOnDate = mEntities.Where(interview => interview.InterviewDate.Value.Date == date.Date)
-                                                               .ToList();
-            return interviewsOnDate;
+            return mEntities.Where(interview => interview.InterviewDate.Value.Date == date.Date)
+                            .ToList();
         }
 
         /// <summary>
@@ -35,9 +34,8 @@ namespace SInterview.DataAccessLayer
         /// <returns>A list of interviews after specified date</returns>
         public IEnumerable<Interview> GetAllIterviewsAfterDate(DateTime date)
         {
-            IEnumerable<Interview> interviewsAfterDate = mEntities.Where(interview => interview.InterviewDate.Value.Date > date.Date)
-                                                                  .ToList();
-            return interviewsAfterDate;
+            return mEntities.Where(interview => interview.InterviewDate.Value.Date > date.Date)
+                            .ToList();
         }
     }
 }
