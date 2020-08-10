@@ -13,9 +13,9 @@ namespace SInterview.DataAccessLayer
 
         private readonly SInterviewDbContext mDbContext;
 
-        private CandidateRepository mCandidateRepository;
+        private IBaseRepository<Candidate> mCandidateRepository;
 
-        private InterviewRepository mInterviewRepository;
+        private IBaseRepository<Interview> mInterviewRepository;
 
         private IBaseRepository<Employee> mEmployeeRepository;
 
@@ -27,9 +27,9 @@ namespace SInterview.DataAccessLayer
 
         #region Public Properties
 
-        public CandidateRepository CandidateRepository => mCandidateRepository ?? new CandidateRepository(mDbContext);
+        public IBaseRepository<Candidate> CandidateRepository => mCandidateRepository ?? new CandidateRepository(mDbContext);
 
-        public InterviewRepository InterviewRepository => mInterviewRepository ?? new InterviewRepository(mDbContext);
+        public IBaseRepository<Interview> InterviewRepository => mInterviewRepository ?? new InterviewRepository(mDbContext);
 
         public IBaseRepository<Employee> EmployeeRepository => mEmployeeRepository ?? new BaseRepository<Employee>(mDbContext);
 

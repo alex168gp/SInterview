@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SInterview.DataAccessLayer;
 
 namespace SInterview.API
 {
@@ -16,6 +17,7 @@ namespace SInterview.API
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -28,6 +30,7 @@ namespace SInterview.API
 
             app.UseRouting();
 
+            // Default route
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>

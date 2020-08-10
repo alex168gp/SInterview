@@ -6,7 +6,10 @@
 
   <ItemGroup>
     <Folder Include="DataTypes\" />
-    <Folder Include="Services\Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SInterview.DataAccessLayer\SInterview.DataAccessLayer.csproj" />
   </ItemGroup>
 
 </Project>
