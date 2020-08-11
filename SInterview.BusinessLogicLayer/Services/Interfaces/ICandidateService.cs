@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SInterview.BusinessLogicLayer.Services
 {
-    interface ICandidateService
+    public interface ICandidateService
     {
         IEnumerable<Candidate> GetAllCandidatesWithPosition(string position);
     }

@@ -8,7 +8,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Swashbuckle.AspNetCore.Swagger;
 using SInterview.DataAccessLayer;
+using SInterview.BusinessLogicLayer.Services;
+using Microsoft.OpenApi.Models;
 
 namespace SInterview.API
 {
@@ -19,8 +22,17 @@ namespace SInterview.API
         public void ConfigureServices(IServiceCollection services)
         {
             // TODO: check how to do it properly
-            services.AddScoped<SInterviewDbContext>();
+            services.AddDbContext<SInterviewDbContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<ICandidateService, CandidateService>();
+
+            services.AddControllers();
+
+            // TODO: Check what the hell is this open api
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Interview System", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,12 +46,26 @@ namespace SInterview.API
             app.UseRouting();
 
             // Default route
-            app.UseEndpoints(endpoints =>
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapGet("/", async context =>
+            //    {
+            //        await context.Response.WriteAsync("Hello World!");
+            //    });
+            //});
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllerRoute(
+            //        name: "default",
+            //        pattern: "{controller=Interview}/{action=GetAllCandidatesWithPosition}");
+            //});
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                c.RoutePrefix = "";
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Interview System V1");
             });
         }
     }
