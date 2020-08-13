@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SInterview.BusinessLogicLayer.Services
+namespace SInterview.BusinessLogicLayer
 {
     public interface ICandidateService
     {

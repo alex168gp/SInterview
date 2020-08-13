@@ -10,8 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Swashbuckle.AspNetCore.Swagger;
 using SInterview.DataAccessLayer;
-using SInterview.BusinessLogicLayer.Services;
 using Microsoft.OpenApi.Models;
+using SInterview.BusinessLogicLayer;
 
 namespace SInterview.API
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SInterview.BusinessLogicLayer.Services
+namespace SInterview.BusinessLogicLayer
 {
     /// <summary>
     /// 
