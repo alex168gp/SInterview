@@ -19,7 +19,7 @@ namespace SInterview.API
         public void ConfigureServices(IServiceCollection services)
         {
             // TODO: check how to do it properly
-            services.AddScoped<SInterviewDbContext>();
+            services.AddDbContext<SInterviewDbContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
