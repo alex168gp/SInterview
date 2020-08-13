@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace SInterview.DataAccessLayer
 {
-    public class CandidateRepository : BaseRepository<Candidate>
+    public class CandidateRepository : BaseRepository<Candidate>, ICandidateRepository
     {
         #region Constructor
 
@@ -22,8 +22,7 @@ namespace SInterview.DataAccessLayer
         /// <returns>All employees with specified position</returns>
         public IEnumerable<Candidate> GetAllCandidatesWithPosition (string position)
         {
-            return mEntities.Where(cand => cand.Position.Equals(position))
-                            .ToList();
+            return mEntities.Where(cand => cand.Position.Equals(position));
         }
     }
 }

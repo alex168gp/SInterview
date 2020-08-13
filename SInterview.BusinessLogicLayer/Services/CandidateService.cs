@@ -23,21 +23,8 @@ namespace SInterview.BusinessLogicLayer.Services
 
         #endregion
 
-        public IEnumerable<Candidate> GetAllCandidatesWithPosition(string position)
-        {
-            var unitOfWork = mUnitOfWork;
-            var interviews = unitOfWork.InterviewRepository.GetAll().ToList();
-            var candidates = unitOfWork.CandidateRepository.GetAll().ToList();
-            var employeeInterviews = unitOfWork.EmployeeInterviewsRepository.GetAll().ToList();
+        public IEnumerable<Candidate> GetCandidates() => mUnitOfWork.CandidateRepository.GetAll();
 
-            var qq = (from c in candidates
-                      join i in interviews on c.CandidateId equals i.CandidateId
-                      join ei in employeeInterviews on i.InterviewId equals ei.InterviewId
-                      where c.CandidateId == 1
-                      select new { c.Name, c.Position, i.InterviewDate, ei.EvaluationDetails })
-                     .ToList();
-
-            return candidates;
-        }
+        public IEnumerable<Candidate> GetAllCandidatesWithPosition(string position) => mUnitOfWork.CandidateRepository.GetAllCandidatesWithPosition(position);
     }
 }

@@ -4,9 +4,9 @@ namespace SInterview.DataAccessLayer
 {
     public interface IUnitOfWork : IDisposable
     {
-        IBaseRepository<Candidate> CandidateRepository { get; }
+        ICandidateRepository CandidateRepository { get; }
 
-        IBaseRepository<Interview> InterviewRepository { get; }
+        IInterviewRepository InterviewRepository { get; }
 
         IBaseRepository<Employee> EmployeeRepository { get; }
 

@@ -13,9 +13,9 @@ namespace SInterview.DataAccessLayer
 
         private readonly SInterviewDbContext mDbContext;
 
-        private IBaseRepository<Candidate> mCandidateRepository;
+        private ICandidateRepository mCandidateRepository;
 
-        private IBaseRepository<Interview> mInterviewRepository;
+        private IInterviewRepository mInterviewRepository;
 
         private IBaseRepository<Employee> mEmployeeRepository;
 
@@ -27,15 +27,15 @@ namespace SInterview.DataAccessLayer
 
         #region Public Properties
 
-        public IBaseRepository<Candidate> CandidateRepository => mCandidateRepository ?? new CandidateRepository(mDbContext);
+        public ICandidateRepository CandidateRepository => mCandidateRepository = mCandidateRepository ?? new CandidateRepository(mDbContext);
 
-        public IBaseRepository<Interview> InterviewRepository => mInterviewRepository ?? new InterviewRepository(mDbContext);
+        public IInterviewRepository InterviewRepository => mInterviewRepository = mInterviewRepository ?? new InterviewRepository(mDbContext);
 
-        public IBaseRepository<Employee> EmployeeRepository => mEmployeeRepository ?? new BaseRepository<Employee>(mDbContext);
+        public IBaseRepository<Employee> EmployeeRepository => mEmployeeRepository = mEmployeeRepository ?? new BaseRepository<Employee>(mDbContext);
 
-        public IBaseRepository<EmployeeAvailableDates> EmployeeAvailableDatesRepository => mEmployeeAvailableDatesRepository ?? new BaseRepository<EmployeeAvailableDates>(mDbContext);
+        public IBaseRepository<EmployeeAvailableDates> EmployeeAvailableDatesRepository => mEmployeeAvailableDatesRepository = mEmployeeAvailableDatesRepository ?? new BaseRepository<EmployeeAvailableDates>(mDbContext);
 
-        public IBaseRepository<EmployeeInterviews> EmployeeInterviewsRepository => mEmployeeInterviewsRepository ?? new BaseRepository<EmployeeInterviews>(mDbContext);
+        public IBaseRepository<EmployeeInterviews> EmployeeInterviewsRepository => mEmployeeInterviewsRepository = mEmployeeInterviewsRepository ?? new BaseRepository<EmployeeInterviews>(mDbContext);
 
         #endregion
 

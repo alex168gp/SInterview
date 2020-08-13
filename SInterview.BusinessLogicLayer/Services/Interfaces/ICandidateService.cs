@@ -7,6 +7,8 @@ namespace SInterview.BusinessLogicLayer.Services
 {
     public interface ICandidateService
     {
+        IEnumerable<Candidate> GetCandidates();
+
         IEnumerable<Candidate> GetAllCandidatesWithPosition(string position);
     }
 }

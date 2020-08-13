@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SInterview.DataAccessLayer
 {
-    public class InterviewRepository : BaseRepository<Interview>
+    public class InterviewRepository : BaseRepository<Interview>, IInterviewRepository
     {
         #region Constructor
 
