@@ -22,9 +22,9 @@ namespace SInterview.API.Controllers
 
         [HttpGet]
         [Route("")]
-        public IEnumerable<Candidate> GetAllCandidatesWithPosition()
+        public IEnumerable<Candidate> GetAllCandidatesWithPosition(string postion)
         {
-            return mCandidateService.GetAllCandidatesWithPosition("Mid").ToList();
+            return mCandidateService.GetAllCandidatesWithPosition(postion).ToList();
         }
     }
 }
