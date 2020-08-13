@@ -12,6 +12,7 @@ using Swashbuckle.AspNetCore.Swagger;
 using SInterview.DataAccessLayer;
 using SInterview.BusinessLogicLayer.Services;
 using Microsoft.OpenApi.Models;
+using AutoMapper;
 
 namespace SInterview.API
 {
@@ -33,6 +34,8 @@ namespace SInterview.API
             {
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "Interview System", Version = "v1" });
             });
+
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,12 +56,12 @@ namespace SInterview.API
             //        await context.Response.WriteAsync("Hello World!");
             //    });
             //});
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{controller=Interview}/{action=GetAllCandidatesWithPosition}");
-            //});
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Candidate}/{action=GetAllCandidatesWithPosition}");
+            });
 
             app.UseSwagger();
 
