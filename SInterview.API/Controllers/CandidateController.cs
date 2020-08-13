@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Resources;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SInterview.API.Resources;
@@ -28,7 +29,7 @@ namespace SInterview.API.Controllers
         [Route("")]
         public IEnumerable<CandidateResource> GetCandidates()
         {
-            var candidates = mCandidateService.GetAll().ToList();
+            var candidates = mCandidateService.GetCandidates().ToList();
             var candidatesResource = mMapper.Map<IEnumerable<Candidate>, IEnumerable<CandidateResource>>(candidates);
             return candidatesResource;
         }
